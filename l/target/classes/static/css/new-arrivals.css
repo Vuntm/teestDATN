@@ -1,0 +1,105 @@
+
+:root {
+    --header-user-color-light: white;
+    --header-user-color-dark: black;
+    --bg-user-color-light: rgb(214, 212, 212);
+    --bg-input-search-color-light: rgb(243, 243, 243);
+
+    --icon-font-size: 20px;
+    --icon-color-light: black;
+
+
+    --bg-color1-dark: #222523;
+    --bg-color2-dark: rgb(42, 43, 42);
+    --bg-color1-light: #e5faec;
+    --bg-color2-light: #c8f5d7;
+    --text-color-dark: white;
+    --text-color-light: black;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-primary: #5765e9;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-white: #fff;
+
+    --card-boder-radius: 2rem;
+    --boder-radius-1: 0.4rem;
+    --boder-radius-2: 0.8rem;
+    --boder-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.new-arrivals {
+    width: 90vw;
+    height: 370px;
+    z-index: 300;
+    margin: 10px 5vw 80px 5vw;
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .new-arrivals-slide {
+    display: flex;
+    height: 100%;
+    width: fit-content; /* Đặt chiều rộng dựa trên nội dung */
+  }
+  
+  .new-arrival-item {
+    flex: 0 0 auto; /* Không mở rộng phần tử */
+    width: 300px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-size: 90%;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    border-radius: 2% 2% 0 0;
+    margin-right: 20px;
+  }
+  
+  .new-arrival-item .content {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 250px;
+    border-radius: 0 0 2% 2%;
+  }
+  
+  .new-arrival-item .content .product-price {
+    width: 40px;
+    height: 15px;
+    background: var(--bg-user-color-light);
+    text-align: start;
+    transform: translateY(-20px) translateX(5px);
+    transition: 0.5s;
+    border-radius: 10%;
+  }
+  
+  .new-arrival-item:hover {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  
+  .new-arrival-item:hover .content {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  
+  .new-arrival-item:hover .content .product-price {
+    transform: translateY(-25px) translateX(5px);
+  }
+  
+

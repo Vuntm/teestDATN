@@ -1,0 +1,51 @@
+.services {
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  order: 1;
+  width: 100%;
+  height: auto;
+  margin: 35px 0;
+  bottom: 0;
+  margin-bottom: 30px !important;
+  background: white;
+}
+
+.services .services-box {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.services .services-box .services-card {
+  text-align: center;
+  width: 310px;
+  height: auto;
+  box-shadow: 0 0 8px white;
+  padding: 15px 10px;
+}
+
+.services .services-box .services-card i {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.directory-products-title {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.directory-products-title i {
+  font-size: 2.7rem;
+  padding-right: 20px;
+}

@@ -1,0 +1,70 @@
+.poster {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    background: rgb(66, 66, 173);
+    margin-bottom: 50px;
+}
+
+.poster .poster-image {
+    z-index: 1;
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    margin: 2%;
+}
+
+.poster .poster-image .content {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%) translateX(20%);
+}
+
+.poster .poster-image .content h3 {
+    width: 600px;
+    color: white;
+    text-align: start;
+    font-weight: 200;
+    line-height: 25px;
+}
+
+
+.poster-title {
+    color: white;
+    font-size: 40px;
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.poster .poster-image .content .btns button a i{
+    line-height: 20px;
+    width: 40px;
+    transform: scaleX(1.3);
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+.poster .poster-image .content .btns button:hover a{
+    transform: translateX(10px);
+}
+
+.poster .poster-image .content .btns button:hover a i{
+    transform: rotateY(180deg);
+}
+.poster .poster-image .content .btns button a{
+    display: flex;
+    transition: 0.3s;
+}
+
+.poster .poster-image .content .btns button a p{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+.poster .poster-image .content .btns button{
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+}

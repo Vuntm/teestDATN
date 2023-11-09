@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/home.css">
+    <link rel="stylesheet" href="../../static/css/header.css">
+    <link rel="stylesheet" href="../../static/css/banner.css">
+    <link rel="stylesheet" href="../../static/css/new-arrivals.css">
+    <link rel="stylesheet" href="../../static/css/poster.css">
+    <link rel="stylesheet" href="../../static/css/service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <h2>F5 Store</h2>
+        </div>
+        <div class="main-header">
+            <a href="home.html" class="active-header">HOME</a>
+            <a href="#">MEN</a>
+            <a href="#">WOMAN</a>
+            <a href="#">KID</a>
+            <a href="#">SPORT</a>
+            <a href="#">BRANDS</a>
+        </div>
+        <div class="group">
+            <div class="group-search" id="search-container">
+                <input type="text" class="search-input" id="search-input">
+                <button class="btn-search"><i class="fa-solid fa-magnifying-glass" id="search"></i></button>
+            </div>
+            <div class="group-products">
+                <a href="myaccount.html" class="fa-regular fa-user" id="user"></a>
+                <a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a>
+                <a href="myaccount-cart.html" class="fa-solid fa-cart-shopping" id="cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="banner-slide">
+            <div class="banner-item">
+                <img src="pictures/nike-blue-white-1.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-running-black-2-removebg-preview.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-running-black-2.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-running-black-1.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-blue-white-1.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-running-black-1.png" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/background.jpg" alt="">
+            </div>
+            <div class="banner-item">
+                <img src="pictures/nike-running-black-1.png" alt="">
+            </div>
+
+        </div>
+        <div class="index-images">
+            <div class="index-item index-item-0 active"></div>
+            <div class="index-item index-item-1"></div>
+            <div class="index-item index-item-2"></div>
+            <div class="index-item index-item-3"></div>
+            <div class="index-item index-item-4"></div>
+            <div class="index-item index-item-5"></div>
+            <div class="index-item index-item-6"></div>
+            <div class="index-item index-item-7"></div>
+        </div>
+        <div class="banner-expand">
+        </div>
+    </div>
+
+    <div class="title-directory">
+        <h2 class="main-title-directory">New Arrivals</h2>
+        <div class="extended-title"><a href="">View All</a></div>
+    </div>
+    <div class="new-arrivals">
+        <div class="new-arrivals-slide" th:each="p,index : ${listArrivalProduct}">
+            <div class="new-arrival-item" >
+                <div class="content">
+                    <div class="product-price" th:text="${p.product_detail_code}"></div>
+                    <div class="product-price" th:text="${p.price}">Giá: </div>
+                    <div class="product-name" th:text="${p.product_detail_name}">Tên sản phẩm: </div>
+<!--                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>-->
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" ></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="poster">
+        <div class="poster-image">
+            <img src="pictures/poster.png" alt="">
+            <div class="content">
+                <h1 class="poster-title">F5 STORE</h1>
+                <h3>We provide the hottest products with the cheapest, prestigious, best quality prices on the market.</h3>
+                <br>
+                <div class="btns">
+                    <button><a href="#"><p>SHOP MEN</p> <i class="fa-solid fa-arrow-right"></i></a></button>
+                    <button><a href="#"><p>SHOP WOMEN </p><i class="fa-solid fa-arrow-right"></i></a></button>
+                    <button><a href="#"><p>SHOP KIDS </p><i class="fa-solid fa-arrow-right"></i></a></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="title-directory">
+        <h2 class="main-title-directory">Hot Products</h2>
+        <div class="extended-title"><a href="">View All</a></div>
+    </div>
+    <div class="hot-product">
+        <div id="hot-product-slide">
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-blue-white-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-running-black-2.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-blue-white-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-blue-white-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-blue-white-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-running-black-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-blue-white-1.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-product-item"onmouseenter="handleMouseEnter(this)" onmouseleave="handleMouseLeave(this)" style="background-image: url(pictures/nike-running-black-2.png);">
+                <div class="content">
+                    <div class="product-name">Tên sản phẩm</div>
+                    <div class="product-price">Giá sản phẩm</div>
+                    <div class="product-quantity-sold">Số lượng đã bán: xxx sản phẩm</div>
+                    <div class="product-action">
+                        <button>Mua ngay</button>
+                        <button>Thêm vào giỏ hàng</button>
+                        <button><a href="myaccount-loved.html" class="fa-solid fa-heart" id="heart"></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hot-product-action">
+            <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="services">
+
+        <div class="services-box">
+
+            <div class="services-card">
+                <i class='bx bxs-truck'></i>
+                <h3>Delivery</h3>
+                <p>Lorem ipsum dolor sit eaque quasi.</p>
+            </div>
+
+            <div class="services-card">
+                <i class='bx bx-headphone'></i>
+                <h3>24/7 Services</h3>
+                <p>Lorem ipsum dolor sit eaque quasi.</p>
+            </div>
+
+            <div class="services-card">
+                <i class='bx bxs-purchase-tag'></i>
+                <h3>Best Deal</h3>
+                <p>Lorem ipsum dolor sit eaque quasi.</p>
+            </div>
+
+            <div class="services-card">
+                <i class='bx bxs-lock-alt'></i>
+                <h3>Secure Payment</h3>
+                <p>Lorem ipsum dolor sit eaque quasi.</p>
+            </div>
+            <a style="color: white;" href="#" id="scroll-to-top-button"><i class="fa-solid fa-angles-up"></i>
+                Click to scroll to top</a>
+        </div>
+
+    </div>
+
+</div>
+<script src="../../static/js/search-input.js"></script>
+<script src="../../static/js/hot-product.js"></script>
+<script src="../../static/js/banner.js"></script>
+
+</body>
+
+</html>
